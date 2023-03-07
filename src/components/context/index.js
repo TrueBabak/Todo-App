@@ -1,11 +1,21 @@
-import React from 'react'
-
-const context = () => {
+import React, { createContext, useState } from "react";
+const ContextApi = {
+  test: "",
+  setTest: () => {},
+};
+export const Context = createContext(ContextApi);
+const ContextsProvider = ({ children }) => {
+  const [test, setTest] = useState("test text");
   return (
-    <div>
-      <div>context</div>
-    </div>
-  )
-}
+    <Context.Provider
+      value={{
+        test,
+        setTest,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
+};
 
-export default context
+export default ContextsProvider;
