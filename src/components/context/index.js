@@ -14,8 +14,16 @@ const ContextsProvider = ({ children }) => {
   const getId = (id) => {
     console.log(id);
   };
-  const addTodo = () => {
-    console.log("added");
+  const addTodo = (value) => {
+    let copyTodoList = [...TodoList];
+    let newItem = {
+      todoName: value,
+      id: TodoList.length + 1,
+      key: TodoList.length + 1,
+      status: "unCompliteed",
+    };
+    copyTodoList.push(newItem);
+    setTodoList(copyTodoList);
   };
   const removeTodo = (id) => {
     const CopyTodo = [...TodoList];
