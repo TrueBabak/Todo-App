@@ -17,6 +17,7 @@ const TodoList = () => {
               id={item.id}
               status={item.status}
               name={item.todoName}
+              key={item.key}
             />
           );
         })}
