@@ -2,30 +2,31 @@ import React, { createContext, useState } from "react";
 import { TodoItem } from "../DataBase";
 const ContextApi = {
   TodoLength: 0,
-  test: "",
-  setTest: () => {},
   TodoList: "",
   setTodoList: () => {},
 };
 export const Context = createContext(ContextApi);
 const ContextsProvider = ({ children }) => {
-  const [test, setTest] = useState("test text");
-  const [TodoList, setTodoList] = useState([]);
+  const [TodoList, setTodoList] = useState(TodoItem);
   let TodoLength = TodoItem.length;
 
   // get id function
   const getId = (id) => {
     console.log(id);
   };
+  const removeTodo = (id) => {
+    const CopyTodo = [...TodoList];
+    const filteredTodo = CopyTodo.filter((p) => p.id !== id);
+    setTodoList(filteredTodo);
+  };
   return (
     <Context.Provider
       value={{
-        test,
-        setTest,
         TodoList,
         setTodoList,
         TodoLength,
         getId,
+        removeTodo,
       }}
     >
       {children}
