@@ -12,6 +12,11 @@ const ContextsProvider = ({ children }) => {
   const [test, setTest] = useState("test text");
   const [TodoList, setTodoList] = useState([]);
   let TodoLength = TodoItem.length;
+
+  // get id function
+  const getId = (id) => {
+    console.log(id);
+  };
   return (
     <Context.Provider
       value={{
@@ -20,6 +25,7 @@ const ContextsProvider = ({ children }) => {
         TodoList,
         setTodoList,
         TodoLength,
+        getId,
       }}
     >
       {children}

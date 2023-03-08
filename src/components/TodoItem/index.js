@@ -1,9 +1,12 @@
 import React from "react";
 
-const TodoItemComp = ({ item }) => {
+const TodoItemComp = ({ getId, id, name }) => {
   return (
-    <div className="border">
-      <div>{item.todoName}</div>
+    <div
+      onClick={() => getId(id)}
+      className="border border-thirdBg shadow-md shadow-secentBg px-2 py-1 rounded-lg bg-mainBg"
+    >
+      <div>{name}</div>
     </div>
   );
 };

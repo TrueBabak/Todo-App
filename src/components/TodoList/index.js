@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../context";
 import { TodoItem } from "../DataBase";
 import Navbar from "../Navbar";
 import TodoItemComp from "../TodoItem";
 
 const TodoList = () => {
+  const { getId } = useContext(Context);
   return (
     <div className="w-6/12 bg-secentBg px-6 py-4 rounded-2xl shadow-md shadow-thirdBg text-textColor">
       <Navbar />
       <div className="grid grid-cols-2 gap-5">
         {TodoItem.map((item) => {
-          return <TodoItemComp item={item} />;
+          return (
+            <TodoItemComp getId={getId} id={item.id} name={item.todoName} />
+          );
         })}
       </div>
     </div>
