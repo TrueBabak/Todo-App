@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 import TodoItemComp from "../TodoItem";
 
 const TodoList = () => {
-  const { TodoList, getId, removeTodo } = useContext(Context);
+  const { TodoList } = useContext(Context);
   return (
     <div className="w-6/12 bg-secentBg px-6 py-4 rounded-2xl shadow-md shadow-thirdBg text-textColor">
       <Navbar />
@@ -16,16 +16,7 @@ const TodoList = () => {
           <EmptyTodo />
         ) : (
           TodoList.map((item) => {
-            return (
-              <TodoItemComp
-                getId={getId}
-                removeTodo={removeTodo}
-                id={item.id}
-                status={item.status}
-                name={item.todoName}
-                key={item.key}
-              />
-            );
+            return <TodoItemComp item={item} key={item.key} />;
           })
         )}
       </div>

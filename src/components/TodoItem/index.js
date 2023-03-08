@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaTimes } from "react-icons/fa";
+import { Context } from "../context";
 
-const TodoItemComp = ({ name, id, getId, removeTodo, status }) => {
+const TodoItemComp = ({ item }) => {
+  const { getId, removeTodoHandler } = useContext(Context);
   return (
     <div
-      onClick={() => getId(id)}
+      onClick={() => getId(item.id)}
       className="border border-thirdBg shadow-md shadow-secentBg px-2 py-1 rounded-lg bg-mainBg relative"
     >
       <div
         className="text-textColor hover:text-thirdBg absolute top-2 right-2"
         onClick={() => {
-          removeTodo(id);
+          removeTodoHandler(item.id);
         }}
       >
         <FaTimes />
@@ -19,9 +21,9 @@ const TodoItemComp = ({ name, id, getId, removeTodo, status }) => {
         <div className="px-1 flex items-center">
           <input type="checkbox" />
         </div>
-        <div>{name}</div>
+        <div>{item.todoName}</div>
       </div>
-      <div>{status}</div>
+      <div>{item.status}</div>
     </div>
   );
 };

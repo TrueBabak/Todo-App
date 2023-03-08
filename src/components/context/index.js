@@ -1,12 +1,7 @@
 import React, { createContext, useState } from "react";
 import { TodoItem } from "../DataBase";
-const ContextApi = {
-  TodoLength: 0,
-  TodoList: "",
-  setTodoList: () => {},
-  inputValue: "",
-  setInputValue: () => {},
-};
+import { ContextApi } from "./ContextData";
+
 export const Context = createContext(ContextApi);
 const ContextsProvider = ({ children }) => {
   const [TodoList, setTodoList] = useState(TodoItem);
@@ -17,6 +12,8 @@ const ContextsProvider = ({ children }) => {
   const getId = (id) => {
     console.log(id);
   };
+
+  // Add Todo function
   const addTodo = (value) => {
     let copyTodoList = [...TodoList];
     let newItem = {
@@ -29,7 +26,9 @@ const ContextsProvider = ({ children }) => {
     setTodoList(copyTodoList);
     setInputValue("");
   };
-  const removeTodo = (id) => {
+
+  // remove todo function
+  const removeTodoHandler = (id) => {
     const CopyTodo = [...TodoList];
     const filteredTodo = CopyTodo.filter((p) => p.id !== id);
     setTodoList(filteredTodo);
@@ -42,7 +41,7 @@ const ContextsProvider = ({ children }) => {
         TodoLength,
         getId,
         addTodo,
-        removeTodo,
+        removeTodoHandler,
         inputValue,
         setInputValue,
       }}
