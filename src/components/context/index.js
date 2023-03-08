@@ -4,10 +4,13 @@ const ContextApi = {
   TodoLength: 0,
   TodoList: "",
   setTodoList: () => {},
+  inputValue: "",
+  setInputValue: () => {},
 };
 export const Context = createContext(ContextApi);
 const ContextsProvider = ({ children }) => {
   const [TodoList, setTodoList] = useState(TodoItem);
+  const [inputValue, setInputValue] = useState("");
   let TodoLength = TodoList.length;
 
   // get id function
@@ -39,6 +42,8 @@ const ContextsProvider = ({ children }) => {
         getId,
         addTodo,
         removeTodo,
+        inputValue,
+        setInputValue,
       }}
     >
       {children}
