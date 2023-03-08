@@ -1,32 +1,32 @@
 export const TodoItem = [
   {
     todoName: "Portfolio",
-    status: true,
+    status: "Compliteed",
     id: 1,
   },
   {
     todoName: "Shopping App",
-    status: true,
+    status: "Compliteed",
     id: 2,
   },
   {
     todoName: "todo App",
-    status: false,
+    status: "unCompliteed",
     id: 3,
   },
   {
     todoName: "weather app",
-    status: false,
+    status: "unCompliteed",
     id: 4,
   },
   {
     todoName: "website",
-    status: true,
+    status: "Compliteed",
     id: 5,
   },
   {
     todoName: "blog",
-    status: false,
+    status: "unCompliteed",
     id: 6,
   },
 ];

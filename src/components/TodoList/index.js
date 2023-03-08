@@ -15,6 +15,7 @@ const TodoList = () => {
               getId={getId}
               removeTodo={removeTodo}
               id={item.id}
+              status={item.status}
               name={item.todoName}
             />
           );

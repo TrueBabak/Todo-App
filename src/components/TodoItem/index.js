@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 
-const TodoItemComp = ({ name, id, getId, removeTodo }) => {
+const TodoItemComp = ({ name, id, getId, removeTodo, status }) => {
   return (
     <div
       onClick={() => getId(id)}
@@ -15,7 +15,13 @@ const TodoItemComp = ({ name, id, getId, removeTodo }) => {
       >
         <FaTimes />
       </div>
-      <div>{name}</div>
+      <div className="flex items-center py-3 text-lg">
+        <div className="px-1 flex items-center">
+          <input type="checkbox" />
+        </div>
+        <div>{name}</div>
+      </div>
+      <div>{status}</div>
     </div>
   );
 };
