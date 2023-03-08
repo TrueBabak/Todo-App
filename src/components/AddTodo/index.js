@@ -16,6 +16,11 @@ const AddTodo = () => {
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
+          onKeyDown={(e) => {
+            if (e.code === "Enter") {
+              addTodo(inputValue);
+            }
+          }}
         />
         <button
           onClick={() => {

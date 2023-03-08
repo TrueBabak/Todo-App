@@ -27,6 +27,7 @@ const ContextsProvider = ({ children }) => {
     };
     copyTodoList.push(newItem);
     setTodoList(copyTodoList);
+    setInputValue("");
   };
   const removeTodo = (id) => {
     const CopyTodo = [...TodoList];
