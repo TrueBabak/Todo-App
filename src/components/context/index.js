@@ -14,6 +14,9 @@ const ContextsProvider = ({ children }) => {
   const getId = (id) => {
     console.log(id);
   };
+  const addTodo = () => {
+    console.log("added");
+  };
   const removeTodo = (id) => {
     const CopyTodo = [...TodoList];
     const filteredTodo = CopyTodo.filter((p) => p.id !== id);
@@ -26,6 +29,7 @@ const ContextsProvider = ({ children }) => {
         setTodoList,
         TodoLength,
         getId,
+        addTodo,
         removeTodo,
       }}
     >
