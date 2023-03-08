@@ -8,7 +8,7 @@ const ContextApi = {
 export const Context = createContext(ContextApi);
 const ContextsProvider = ({ children }) => {
   const [TodoList, setTodoList] = useState(TodoItem);
-  let TodoLength = TodoItem.length;
+  let TodoLength = TodoList.length;
 
   // get id function
   const getId = (id) => {
