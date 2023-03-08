@@ -4,7 +4,7 @@ import { Context } from "../components/context";
 const App = () => {
   const { test } = useContext(Context);
   return (
-    <div>
+    <div className="w-full h-screen bg-mainBg flex justify-center items-center">
       <div>App... {test}</div>
     </div>
   );
