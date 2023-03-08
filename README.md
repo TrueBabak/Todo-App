@@ -1,3 +1,11 @@
+<h2 align="center">
+  Todo list - v1.0<br/>
+</h2>
+<div align="center">
+  <img alt="Demo" src="./Image/TodoProject.png" />
+</div>
+
+<br/>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
