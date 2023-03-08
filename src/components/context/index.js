@@ -1,5 +1,7 @@
 import React, { createContext, useState } from "react";
+import { TodoItem } from "../DataBase";
 const ContextApi = {
+  TodoLength: 0,
   test: "",
   setTest: () => {},
   TodoList: "",
@@ -9,6 +11,7 @@ export const Context = createContext(ContextApi);
 const ContextsProvider = ({ children }) => {
   const [test, setTest] = useState("test text");
   const [TodoList, setTodoList] = useState([]);
+  let TodoLength = TodoItem.length;
   return (
     <Context.Provider
       value={{
@@ -16,6 +19,7 @@ const ContextsProvider = ({ children }) => {
         setTest,
         TodoList,
         setTodoList,
+        TodoLength,
       }}
     >
       {children}
